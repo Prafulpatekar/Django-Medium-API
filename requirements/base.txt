@@ -1,0 +1,14 @@
+django==4.1.7
+django-environ==0.10.0 # allows to configure environments variables for django
+djangorestframework==3.14.0
+django-cors-headers==3.14.0 # add cors orgin resources sharing headers
+django-filter==22.1
+django-autoslug==1.9.8 # add automatic slug support in django models
+django-countries==7.5.1 # add country data
+django-phonenumber-field==7.0.2 # add international phone number field
+phonenumbers==8.13.7 # phone number from google official 
+drf-yasg==1.21.5 # Auto generated real swagger and openAI documentation
+Pillow==9.4.0
+argon2-cffi==21.3.0 # for password hashing in django 
+pytz==2022.7.1 # cross platform timezone calculation
+django-taggit==3.1.0 # simple reusable django application for tagging
