@@ -22,3 +22,9 @@ Basic functionality of medium blogs like auth and reviews backend made in Django
     `docker compose -f local.yml down`
 6. To inspect volume
     `docker volume inspect <volume name>`
+7. To execute backup script on postgres service to take backup
+    `docker compose -f local.yml exec postgres backup`
+8. To execute backups script on postgres service to list backups
+    `docker compose -f local.yml exec postgres backups`
+9. To execute restore script on postgres service
+    `docker compose -f local.yml exec postgres restore <backup file name>`
