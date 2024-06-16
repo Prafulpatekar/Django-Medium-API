@@ -28,3 +28,4 @@ Basic functionality of medium blogs like auth and reviews backend made in Django
     `docker compose -f local.yml exec postgres backups`
 9. To execute restore script on postgres service
     `docker compose -f local.yml exec postgres restore <backup file name>`
+10. Line 10
