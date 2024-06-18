@@ -5,9 +5,9 @@ Basic functionality of medium blogs like auth and reviews backend made in Django
 ## Generate secret key for django production
 - python -c "import secrets; print(secrets.token_urlsafe(38))"
 
-### Command to create virtual environment
+### Command to create virtual environment (Prefered python version=3.11)
 - `py -0p`
-- `py -V:3.11 -m venv venv`
+- `py -V:3.11 -m venv venv` 
 
 ### Command for docker compose
 1. Check Docker compose config 
