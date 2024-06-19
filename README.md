@@ -1,9 +1,14 @@
 # Django-Medium-API
 Basic functionality of medium blogs like auth and reviews backend made in Django and PostgreSQL for database.
 
+## For M1 machine MACBOOK
+`export DOCKER_DEFAULT_PLATFORM=linux/amd64`
 
 ## Generate secret key for django production
 - python -c "import secrets; print(secrets.token_urlsafe(38))"
+
+## For makemigration and migrate issue follow below link
+- "https://stackoverflow.com/questions/44651760/django-db-migrations-exceptions-inconsistentmigrationhistory"
 
 ### Command to create virtual environment (Prefered python version=3.11)
 - `py -0p`
@@ -28,4 +33,3 @@ Basic functionality of medium blogs like auth and reviews backend made in Django
     `docker compose -f local.yml exec postgres backups`
 9. To execute restore script on postgres service
     `docker compose -f local.yml exec postgres restore <backup file name>`
-10. Line 10
