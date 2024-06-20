@@ -12,3 +12,8 @@ Pillow==9.4.0
 argon2-cffi==21.3.0 # for password hashing in django 
 pytz==2022.7.1 # cross platform timezone calculation
 django-taggit==3.1.0 # simple reusable django application for tagging
+
+redis==4.5.1
+celery==5.2.7
+flower==1.2.0 # provides web base user interface to monitor celery
+django-celery-email==3.0.0
