@@ -11,8 +11,10 @@ services:
       - .:/app:z
       - static_volume:/app/staticfiles
       - media_volume:/app/mediafiles
-    ports:
-      - "8000:8000"
+    # ports: # port forwarding from container to host machine
+    #   - "8000:8000"
+    expose: # expose for other services to use
+      - "8000"
     env_file:
       - ./.envs/.local/.django
       - ./.envs/.local/.postgres
@@ -32,8 +34,8 @@ services:
       - local_postgres_data_backups:/backups
     env_file:
       - ./.envs/.local/.postgres
-    ports:
-      - "5432:5432"
+    # ports:
+    #   - "5432:5432"
     networks:
       - medium-api
 
@@ -44,6 +46,23 @@ services:
       - "8025:8025"
     networks:
       - medium-api
+
+  ngnix:
+    restart: always
+    container_name: nginx_server
+    depends_on:
+      - api
+    volumes:
+      - static_volume:/app/staticfiles
+      - media_volume:/app/mediafiles
+    build:
+      context: ./docker/local/nginx
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    networks:
+        - medium-api
+
 
 networks:
   medium-api:
