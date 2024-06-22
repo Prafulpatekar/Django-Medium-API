@@ -7,3 +7,6 @@ class ProfilesConfig(AppConfig):
     name = "core_apps.profiles"
     verbose_name = gettext_lazy("Profile")
     verbose_name_plural = gettext_lazy("Profiles")
+    
+    def ready(self):
+        from core_apps.profiles import signals
