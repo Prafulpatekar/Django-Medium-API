@@ -4,6 +4,8 @@ from django.conf import settings
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
+from dj_rest_auth.views import PasswordResetConfirmView
+from core_apps.users.views import CustomUserDetailView
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -22,6 +24,11 @@ urlpatterns = [
 
     path("redoc/",schema_view.with_ui("redoc",cache_timeout=0)), # third party package to get UI for API docs
     path(settings.ADMIN_URL, admin.site.urls),
+    path("api/v1/auth/user/",CustomUserDetailView.as_view(),name="user_details"),
+    path("api/v1/auth/",include("dj_rest_auth.urls")),
+    path("api/v1/auth/registration/",include("dj_rest_auth.registration.urls")),
+    path("api/v1/auth/password/reset/confirm/<uidb64>/<token>/",PasswordResetConfirmView.as_view(),name="password_reset_confirm")
+
 
 ]
 
