@@ -11,19 +11,9 @@ User = get_user_model()
 
 class ProfileModel(TimeStampedModel):
     class Gender(models.TextChoices):
-        MALE = (
-            "M",
-            _("Male"),
-        )
-
-        FEMALE = (
-            "F",
-            _("Female"),
-        )
-        OTHER = (
-            "O",
-            _("Other"),
-        )
+        MALE = ("M",_("Male"),)
+        FEMALE = ("F",_("Female"),)
+        OTHER = ("O",_("Other"),)
 
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
     phone_number = PhoneNumberField(
