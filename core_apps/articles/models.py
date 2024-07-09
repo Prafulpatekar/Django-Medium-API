@@ -30,6 +30,8 @@ class Article(TimeStampedModel):
     def estimated_reading_time(self):
         return ArticleReadTimeEngine.estimate_reading_time(self)
 
+    def view_count(self):
+        return self.article_views.count()
 
 class ArticleView(TimeStampedModel):
     article = models.ForeignKey(
